@@ -12,7 +12,7 @@ export default class App extends Component {
 	};
 
 	handleSubmit = (state) => {
-		if (!this.state.contacts.filter((el) => el.name === state.name).length > 0) {
+		if (!this.state.contacts.filter((el) => el.name.toLowerCase() === state.name.toLowerCase()).length > 0) {
 			this.setState((prevState) => ({
 				contacts: [...prevState.contacts, { name: state.name, number: state.number, id: nanoid() }],
 			}));
