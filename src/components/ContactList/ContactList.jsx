@@ -4,10 +4,10 @@ import s from './contactList.module.scss';
 const ContactsList = ({ filteredContacts, handleClick }) => {
 	return (
 		<ul>
-			{filteredContacts.map((el, index) => (
-				<li id={el.id} key={index}>
-					{el.name}:<span>{el.number}</span>
-					<button onClick={handleClick}>Delete</button>
+			{filteredContacts.map( ( {id, name, number} ) => (
+				<li id={id} key={id}>
+					{name}:<span>{number}</span>
+					<button onClick={()=> handleClick(id)}>Delete</button>
 				</li>
 			))}
 		</ul>
